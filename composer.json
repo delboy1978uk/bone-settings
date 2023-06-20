@@ -1,0 +1,22 @@
+{
+    "name": "delboy1978uk/settings",
+    "description": "A generic settings entity",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Derek McLean",
+            "email": "delboy1978uk@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev":{
+        "codeception/codeception":"^4.2",
+        "codeception/module-asserts": "^2.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "Del\\Settings":"src/"
+        }
+    }
+}
