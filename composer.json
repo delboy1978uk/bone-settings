@@ -1,5 +1,5 @@
 {
-    "name": "delboy1978uk/settings",
+    "name": "delboy1978uk/bone-settings",
     "description": "A generic settings entity",
     "license": "MIT",
     "authors": [
@@ -9,6 +9,7 @@
         }
     ],
     "require": {
+        "delboy1978uk/bone-doctrine": "1.8.0"
     },
     "require-dev":{
         "codeception/codeception":"^4.2",
@@ -16,7 +17,7 @@
     },
     "autoload":{
         "psr-4":{
-            "Del\\Settings":"src/"
+            "Bone\\Settings\\":"src/"
         }
     }
 }

@@ -1,26 +1,40 @@
-# blank
-[![Build Status](https://travis-ci.org/delboy1978uk/blank.png?branch=master)](https://travis-ci.org/delboy1978uk/blank) [![Code Coverage](https://scrutinizer-ci.com/g/delboy1978uk/blank/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/blank/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/delboy1978uk/blank/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/blank/?branch=master) <br />
-a blank PHP setup for writing a new Github project with Composer and Packagist complete with travis builds and scrutinizer code coverage & quality analysis
-##Usage
-Simply clone this repository, delete the .git folder, tweak the composer.json, and do a couple of (case sensitive) find and replaces:
-```
-blank
-Blank
-Del
-delboy1978uk
-```
+# bonesettings
+![build status](https://github.com/delboy1978uk/bone-settings/actions/workflows/master.yml/badge.svg) [![Code 
+Coverage](https://scrutinizer-ci.com/g/delboy1978uk/bone-settings/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/bone-settings/?branch=master) 
+[![Scrutinizer Code 
+Quality](https://scrutinizer-ci.com/g/delboy1978uk/bone-settings/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/bone-settings/?branch=master) 
 
-Rename the following files/folders:
+A generic settings doctrine entity
+
+## installation
 ```
-src/Blank.php
-tests/unit/Del/
-tests/unit/Del/BlankTest.php
+composer require delboy1978uk/settings
 ```
-Finally, add your repository on Travis CI and Scrutinizer, then commit and push to your Github repository.
-Now Github has a commit with a composer.json, head over to Packagist and submit your repository.
-###Note about tests
-Tests are done using the awesome Codeception! Run tests from the root folder by typing:
+## configuration
+There is a default `Bone\Settings\Entity\UserSettings` entity, and/or yu can create your own. Simply add the package class to Bone's package 
+config if using bone Framework, or add `vendor/delboy1978uk/bone-settings/src/Entity` as one of your entity paths if not
+.
+```php
+<?php
+
+// other use statements here
+use Bone\Settings\SettingsPackage;
+
+return [
+    'packages' => [
+        // other packages here ...
+        SettingsPackage::class,
+    ],
+    // ...
+];
 ```
-vendor/bin/codecept run unit
-```
-Tests will push to your Travis branch, which will push code coverage to scrutinizer. Now you can start making tests and not worry about setup.
+## usage
+The abstract settings entity has a dual primary key of a group id and owner id. Think of the settings group as 
+category id of settings, so as an example "email preferences" could be group 1, and "storage prefernces" could be group 2.
+Where you determine that number is not the concern of this package, but you don't need to use it, it has a default of 1.
+The owner field is for whoever or whatever owns these settings, so in the case of `UserSettings`, the owner id would be 
+the user's id.
+## custom classes
+Simply extend `Bone\Settings\Entity\AbstractSettings` and add the `@ORM\Entity` annotation. See the 
+`Bone\Settings\Entity\UserSettings` class as an example. 
+
