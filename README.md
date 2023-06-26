@@ -1,4 +1,4 @@
-# bonesettings
+# bone-settings
 ![build status](https://github.com/delboy1978uk/bone-settings/actions/workflows/master.yml/badge.svg) [![Code 
 Coverage](https://scrutinizer-ci.com/g/delboy1978uk/bone-settings/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/bone-settings/?branch=master) 
 [![Scrutinizer Code 
