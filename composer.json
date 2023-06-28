@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "delboy1978uk/bone-doctrine": "^1.8"
+        "delboy1978uk/bone-oauth2": "^1.5"
     },
     "require-dev":{
         "codeception/codeception":"^4.2",
