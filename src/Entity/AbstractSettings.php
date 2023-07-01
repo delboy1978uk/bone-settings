@@ -13,10 +13,10 @@ abstract class AbstractSettings
     use HasSettings;
 
     /** @ORM\Column(type="integer",length=11) */
-    private int $ownerId;
+    protected int $ownerId;
 
-    /** @ORM\Column(type="integer",length=4, default=1) */
-    private int $settingsGroupId = 1;
+    /** @ORM\Column(type="integer",length=4, options={"default" : 1})) */
+    protected int $settingsGroupId = 1;
 
     public function getSettingsGroupId(): int
     {
