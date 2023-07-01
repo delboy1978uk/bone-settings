@@ -8,6 +8,7 @@ use Bone\Settings\Entity\UserSettings;
 use Del\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Laminas\Diactoros\Response\JsonResponse;
+use Laminas\Stdlib\ArrayUtils;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -48,7 +49,7 @@ class SettingsController
     {
         $userSettings = $this->getSettings($request);
         $newSettings = $request->getParsedBody();
-        $mergedSettings = \array_merge($userSettings->getSettings(), $newSettings);
+        $mergedSettings = ArrayUtils::merge($userSettings->getSettings(), $newSettings);
         $userSettings->setSettings($mergedSettings);
         $this->entityManager->flush();
 
