@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bone\Settings\Entity;
 
 use Bone\BoneDoctrine\Traits\HasSettings;
@@ -12,10 +14,10 @@ abstract class AbstractSettings
 {
     use HasSettings;
 
-    /** @ORM\Column(type="integer",length=11) */
+    #[ORM\Column(type: 'integer', length: 11)]
     protected int $ownerId;
 
-    /** @ORM\Column(type="integer",length=4, options={"default" : 1})) */
+    #[ORM\Column(type: 'integer', length: 4, options: ['default' => 1])]
     protected int $settingsGroupId = 1;
 
     public function getSettingsGroupId(): int

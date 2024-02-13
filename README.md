@@ -11,7 +11,7 @@ A generic settings doctrine entity
 composer require delboy1978uk/settings
 ```
 ## configuration
-There is a default `Bone\Settings\Entity\UserSettings` entity, and/or yu can create your own. Simply add the package class to Bone's package 
+There is a default `Bone\Settings\Entity\UserSettings` entity, and/or you can create your own. Simply add the package class to Bone's package 
 config if using bone Framework, or add `vendor/delboy1978uk/bone-settings/src/Entity` as one of your entity paths if not
 .
 ```php
@@ -35,6 +35,6 @@ Where you determine that number is not the concern of this package, but you don'
 The owner field is for whoever or whatever owns these settings, so in the case of `UserSettings`, the owner id would be 
 the user's id.
 ## custom classes
-Simply extend `Bone\Settings\Entity\AbstractSettings` and add the `@ORM\Entity` annotation. See the 
+Simply extend `Bone\Settings\Entity\AbstractSettings` and add the `#[ORM\Entity]` annotation. See the 
 `Bone\Settings\Entity\UserSettings` class as an example. 
 

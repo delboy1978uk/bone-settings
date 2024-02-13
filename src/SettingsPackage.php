@@ -30,7 +30,7 @@ class SettingsPackage implements RegistrationInterface, EntityRegistrationInterf
         });
     }
 
-    public function addRoutes(Container $c, Router $router)
+    public function addRoutes(Container $c, Router $router): void
     {
         $factory = new ResponseFactory();
         $strategy = new JsonStrategy($factory);
