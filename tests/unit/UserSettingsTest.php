@@ -2,10 +2,10 @@
 
 namespace unit;
 
-use Codeception\TestCase\Test;
+use Codeception\Test\Unit;
 use Bone\Settings\Entity\UserSettings;
 
-class UserSettingsTest extends Test
+class UserSettingsTest extends Unit
 {
     public function testGettersAndSetters()
     {

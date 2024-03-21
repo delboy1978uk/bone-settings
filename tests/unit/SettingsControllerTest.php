@@ -3,7 +3,7 @@
 namespace unit;
 
 use Bone\Settings\Controller\SettingsController;
-use Codeception\TestCase\Test;
+use Codeception\Test\Unit;
 use Del\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
@@ -11,7 +11,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class SettingsControllerTest extends Test
+class SettingsControllerTest extends Unit
 {
     private SettingsController $settingsController;
     private MockObject $request;
