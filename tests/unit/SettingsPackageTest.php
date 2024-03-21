@@ -7,11 +7,11 @@ use Bone\OAuth2\Http\Middleware\ResourceServerMiddleware;
 use Bone\Router\Router;
 use Bone\Settings\Controller\SettingsController;
 use Bone\Settings\SettingsPackage;
-use Codeception\TestCase\Test;
+use Codeception\Test\Unit;
 use Doctrine\ORM\EntityManagerInterface;
 use League\Route\RouteGroup;
 
-class SettingsPackageTest extends Test
+class SettingsPackageTest extends Unit
 {
     public function testPackage()
     {
